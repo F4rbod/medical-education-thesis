@@ -17,6 +17,11 @@ impact_scores=impact_score_calculator(prof_survey)
 write.csv(impact_scores,"impact_scores.csv")
 
 #EFA
+#https://stats.oarc.ucla.edu/spss/seminars/introduction-to-factor-analysis/a-practical-introduction-to-factor-analysis/
+#https://support.sas.com/resources/papers/proceedings/proceedings/sugi31/200-31.pdf
+#https://web.cortland.edu/andersmd/psy341/efa.pdf
+#https://www.promptcloud.com/blog/exploratory-factor-analysis-in-r/
+
 install.packages("psych",Ncpus=2)
 library(psych)
 library(corrplot)
@@ -66,6 +71,9 @@ head(fa.var$scores)
 
 
 #CFA
+#https://lavaan.ugent.be/tutorial/syntax1.html
+#https://benwhalley.github.io/just-enough-r/model-fit.html
+#https://stats.oarc.ucla.edu/r/seminars/rcfa/
 install.packages("lavaan",Ncpus=2)
 install.packages("semPlot",Ncpus=2)
 install.packages("pander",Ncpus=2)
@@ -99,11 +107,16 @@ modificationindices(student.fit)
 
 
 #cronbachs alpha
+#https://www.statology.org/cronbachs-alpha-in-r/
+
 library(ltm)
 cronbach.alpha(data=student_data[,6:10],na.rm = T,CI = T,B=500)
 
 
 #interrater reliability
+#https://www.datanovia.com/en/lessons/inter-rater-reliability-analyses-quick-r-codes/#intraclass-correlation-coefficients-continuous-scales
+#http://www2.hawaii.edu/~georgeha/Handouts/meas/Exercises/_book/interrater.html
+
 install.packages("irr")
 library(irr)
 
